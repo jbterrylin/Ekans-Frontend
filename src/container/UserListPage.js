@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 function UserListPage() {
     const [data, setData] = useState(null);
-    const jobCategory = checkjob(["Admin"]) ? "$JobCategory=('Manager','Nurse','PTNurse')" : "$JobCategory=('Nurse','PTNurse')";
+    const jobCategory = checkjob(["Admin"]) ? "$JobCategory=('Admin','Manager','Nurse','PTNurse')" : "$JobCategory=('Nurse','PTNurse')";
 
     useEffect(() => {
         const action = async function() {

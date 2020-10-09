@@ -1,15 +1,14 @@
 import { create } from 'apisauce';
 import qs from 'query-string';
 
-const client = create({ baseURL: 'https://dace1a0e81ae.ngrok.io' });
-// const client = create({ baseURL: 'http://127.0.0.1:3001/' });
+// const client = create({ baseURL: 'https://dace1a0e81ae.ngrok.io' });
+const client = create({ baseURL: 'http://127.0.0.1:3001/' });
 const request = async (method, path, data) => {
     let response = undefined;
     try {
         if (method === 'GET' && (typeof data === 'object' || typeof data === 'string')) {
             path += "?" + qs.stringify(data);
         }
-
         if (method !== "GET") {
             response = await client[method.toLowerCase()](path, data);
         } else {
