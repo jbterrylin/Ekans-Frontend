@@ -182,7 +182,7 @@ function UserListPage() {
                         Details
                     </Link>
                     {
-                        record.Job !== "Manager" ? 
+                        record.Job !== "Manager" && record.Job !== "Admin" ? 
                             <Link to={`/calander/${record.ID}`}>
                                 Calander
                             </Link>
